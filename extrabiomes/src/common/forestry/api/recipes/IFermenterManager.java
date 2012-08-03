@@ -1,6 +1,6 @@
 package forestry.api.recipes;
 
-import forestry.api.liquids.LiquidStack;
+import buildcraft.api.liquids.LiquidStack;
 import net.minecraft.src.ItemStack;
 
 /**

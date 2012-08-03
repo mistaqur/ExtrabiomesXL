@@ -6,7 +6,7 @@ import net.minecraft.src.Block;
 import net.minecraft.src.Material;
 import net.minecraft.src.World;
 import net.minecraft.src.WorldGenerator;
-import forestry.api.core.ForestryBlock;
+import forestry.api.core.BlockInterface;
 
 public class WorldGenBogEarth extends WorldGenerator {
 
@@ -27,7 +27,7 @@ public class WorldGenBogEarth extends WorldGenerator {
 				continue;
 			}
 
-			world.setBlockAndMetadata(x, y, z, ForestryBlock.soil.blockID, 1);
+			world.setBlockAndMetadata(x, y, z, BlockInterface.getBlock("soil").itemID, 1);
 		}
 
 		return true;

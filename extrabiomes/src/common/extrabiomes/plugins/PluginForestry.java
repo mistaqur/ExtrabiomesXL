@@ -22,13 +22,15 @@ import extrabiomes.plugins.forestry.CropProviderSapling;
 import extrabiomes.plugins.forestry.WorldGenChunkBogEarth;
 import extrabiomes.terrain.BiomeDecoration;
 import forestry.api.apiculture.FlowerManager;
+
+import buildcraft.api.liquids.LiquidStack;
+
 import forestry.api.core.EnumHumidity;
 import forestry.api.core.EnumTemperature;
-import forestry.api.core.ForestryBlock;
+import forestry.api.core.BlockInterface;
 import forestry.api.core.GlobalManager;
 import forestry.api.core.ItemInterface;
 import forestry.api.cultivation.CropProviders;
-import forestry.api.liquids.LiquidStack;
 import forestry.api.recipes.RecipeManagers;
 import forestry.api.storage.BackpackManager;
 
@@ -258,14 +260,14 @@ public enum PluginForestry implements IPlugin {
 	private static void addSaplings() {
 		if (ExtrabiomesBlock.sapling == null) return;
 
-		if (ForestryBlock.soil != null) {
-			BlockCustomSapling.forestryHumusID = ForestryBlock.soil.blockID;
+		if (BlockInterface.getBlock("soil") != null) {
+			BlockCustomSapling.forestryHumusID = BlockInterface.getBlock("soil").itemID;
 			BlockCustomSapling.forestryHumusMeta = 0;
 		}
 
 		CropProviders.arborealCrops.add(new CropProviderSapling());
 		TerrainGenManager.treesCanGrowOnIDs.add(Integer
-				.valueOf(ForestryBlock.soil.blockID));
+				.valueOf(BlockInterface.getBlock("soil").itemID));
 	}
 
 	@Override

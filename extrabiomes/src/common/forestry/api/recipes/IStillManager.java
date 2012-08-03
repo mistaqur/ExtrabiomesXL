@@ -1,6 +1,6 @@
 package forestry.api.recipes;
 
-import forestry.api.liquids.LiquidStack;
+import buildcraft.api.liquids.LiquidStack;
 
 /**
  * Provides an interface to the recipe manager of the still.

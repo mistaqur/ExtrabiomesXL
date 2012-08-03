@@ -6,9 +6,10 @@ import net.minecraft.src.Block;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.World;
 import forestry.api.core.ForestryAPI;
-import forestry.api.core.ForestryBlock;
 import forestry.api.cultivation.ICropEntity;
 import forestry.api.cultivation.ICropProvider;
+import extrabiomes.blocks.BlockCustomSapling;
+
 import extrabiomes.api.ExtrabiomesBlock;
 import extrabiomes.api.TerrainGenManager;
 
@@ -26,7 +27,7 @@ public class CropProviderSapling implements ICropProvider {
 
 		int below = world.getBlockId(x, y - 1, z);
 		int meta = world.getBlockMetadata(x, y - 1, z);
-		if (below != ForestryBlock.soil.blockID || (meta & 0x3) != 0) {
+		if (below != BlockCustomSapling.forestryHumusID || (meta & 0x3) != BlockCustomSapling.forestryHumusMeta) {
 			return false;
 		}
 		world.setBlockAndMetadataWithNotify(x, y, z,
